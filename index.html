@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MülkVera - Gayrimenkulde Teknolojik Dönüşüm</title>
+    <meta name="description" content="Emlak sektörünün geleceği MülkVera'ya hoş geldiniz. 3D sanal turlar, doğrulanmış ilanlar ve düşük komisyon.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1E3A8A', // Güven veren modern mavi
+                            dark: '#0F172A',
+                            light: '#F8FAFC',
+                            accent: '#10B981', // Canlı yeşil (Güven & Yenilik)
+                            orange: '#F97316' // Aksan turuncu
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Styles for extra polish */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-brand-light overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-28">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="assets/images/logo.png" alt="MülkVera Logo" class="h-16 w-auto">
+                    <span class="text-3xl font-bold tracking-tight text-brand-blue ml-3">
+                        Mülk<span class="text-gray-900">Vera</span>
+                    </span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#cozumlerimiz" class="text-gray-600 hover:text-brand-blue font-medium transition">Çözümlerimiz</a>
+                    <a href="#ozellikler" class="text-gray-600 hover:text-brand-blue font-medium transition">Özellikler</a>
+                    <a href="#vizyon" class="text-gray-600 hover:text-brand-blue font-medium transition">Vizyon</a>
+                    <a href="#iletisim" class="text-gray-600 hover:text-brand-blue font-medium transition">İletişim</a>
+                </div>
+                <!-- CTA -->
+                <div class="hidden md:flex">
+                    <a href="#iletisim" class="bg-brand-blue hover:bg-blue-800 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Bize Katılın
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 text-center">
+                <a href="#cozumlerimiz" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-md">Çözümlerimiz</a>
+                <a href="#ozellikler" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-md">Özellikler</a>
+                <a href="#vizyon" class="block px-3 py-3 text-gray-700 font-medium hover:bg-gray-50 rounded-md">Vizyon</a>
+                <a href="#iletisim" class="block px-3 py-3 text-brand-blue font-bold hover:bg-gray-50 rounded-md">Bize Katılın</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Subtle background decorative blobs -->
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-brand-blue font-semibold text-sm mb-6 border border-blue-100">
+                        🚀 Gayrimenkulde Yeni Nesil Deneyim
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
+                        Gayrimenkulde <br/>
+                        <span class="gradient-text">Şeffaf ve Teknolojik</span> Dönüşüm
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
+                        Güven eksikliğini ve yüksek maliyetleri ortadan kaldırıyoruz. 3D sanal turlar, doğrulanmış ilanlar ve sadece <strong class="text-brand-blue">%2 komisyon</strong> ile emlak sektörünün geleceği MülkVera'ya hoş geldiniz.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#cozumlerimiz" class="text-center bg-brand-blue hover:bg-blue-800 text-white px-8 py-3.5 rounded-full font-medium transition shadow-lg hover:shadow-xl">
+                            Sistemi İncele
+                        </a>
+                        <a href="#vizyon" class="text-center bg-white border border-gray-200 hover:border-gray-300 text-gray-700 px-8 py-3.5 rounded-full font-medium transition shadow-sm hover:shadow-md flex justify-center items-center">
+                            <i class="fa-solid fa-download mr-2"></i> Yatırımcı Sunumu
+                        </a>
+                    </div>
+                    <div class="mt-10 flex items-center gap-4 text-sm text-gray-500 font-medium">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=1" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=2" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=3" alt="User">
+                        </div>
+                        <p>Yüzlerce mutlu ev sahibi</p>
+                    </div>
+                </div>
+                <div class="mt-16 lg:mt-0 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/20 bg-white p-2">
+                        <img src="assets/images/hero_image.jpg" alt="Akıllı Ev Dijital İkiz" class="w-full h-auto rounded-xl object-cover" style="aspect-ratio: 16/9;">
+                        <!-- Floating badge -->
+                        <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/50 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                            <div class="bg-brand-accent/10 p-3 rounded-full text-brand-accent">
+                                <i class="fa-solid fa-shield-check text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-medium">%100 Gerçek</p>
+                                <p class="text-sm font-bold text-gray-900">Doğrulanmış İlanlar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kırık Bir Sistem (Sektördeki Sorunlar) -->
+    <section id="cozumlerimiz" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-3">Sektörün Gerçekleri</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kırık Bir Sistem: Emlakta Çözüm Bekleyen Sorunlar</h3>
+                <p class="text-gray-600 text-lg">Mevcut emlak sektörü hem alıcılar hem de satıcılar için yorucu, maliyetli ve güvensiz. İşte değiştirdiğimiz standartlar.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 transition hover:bg-white hover:shadow-soft border border-transparent hover:border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-secret text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Güven Eksikliği</h4>
+                    <p class="text-gray-600 leading-relaxed">Yanlış konumlar, manipülatif görseller ve sahte ilanlar ile zaman kaybettiren şeffaflık sorunu.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 transition hover:bg-white hover:shadow-soft border border-transparent hover:border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-money-bill-trend-up text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Yüksek Komisyonlar</h4>
+                    <p class="text-gray-600 leading-relaxed">İşlem maliyetlerini gereksiz yere şişiren ve hem alıcıdan hem satıcıdan alınan %4+ komisyonlar.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 transition hover:bg-white hover:shadow-soft border border-transparent hover:border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-vr-cardboard text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Teknoloji Yoksunluğu</h4>
+                    <p class="text-gray-600 leading-relaxed">Eksik veri analizleri, düşük kaliteli fotoğraflar ve 3D görselleştirme eksikliği.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-gray-50 rounded-2xl p-8 transition hover:bg-white hover:shadow-soft border border-transparent hover:border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hourglass-half text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3">Yetkinlik Boşluğu</h4>
+                    <p class="text-gray-600 leading-relaxed">Uzman olmayan aracılar nedeniyle uzayan süreçler, verimsizlik ve yaşanan evrak stresleri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neden MülkVera & Özellikler -->
+    <section id="ozellikler" class="py-24 bg-brand-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Sol: Özellikler Metni -->
+                <div data-aos="fade-right">
+                    <h2 class="text-brand-blue font-semibold tracking-wide uppercase text-sm mb-3">Çözümümüz</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Neden MülkVera?</h3>
+                    
+                    <div class="space-y-8">
+                        <!-- Özellik 1 -->
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-accent border border-gray-100">
+                                    <i class="fa-solid fa-file-signature text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Doğrulanmış İlan Sistemi</h4>
+                                <p class="text-gray-600">Sadece tapu kayıtları ve kimlik doğrulaması yapılmış, %100 gerçek ilanlar yayınlanır. Sürprizlere yer yok.</p>
+                            </div>
+                        </div>
+                        <!-- Özellik 2 -->
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-blue border border-gray-100">
+                                    <i class="fa-solid fa-percent text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Sadece %2 Komisyon</h4>
+                                <p class="text-gray-600">Satıcıdan komisyon almıyoruz (Sıfır maliyet). Alıcılar ise standart %4 yerine adil bir şekilde sadece %2 komisyon öder.</p>
+                            </div>
+                        </div>
+                        <!-- Özellik 3 -->
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-indigo-500 border border-gray-100">
+                                    <i class="fa-solid fa-chart-line text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">Veri Odaklı Fiyatlama</h4>
+                                <p class="text-gray-600">Gelişmiş algoritmik eşleştirme ve bölgesel pazar analizleriyle gayrimenkulünüzün gerçek değerini anında sunuyoruz.</p>
+                            </div>
+                        </div>
+                        <!-- Özellik 4 -->
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-purple-500 border border-gray-100">
+                                    <i class="fa-solid fa-cubes text-xl"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">3D & Kesintisiz Teknoloji</h4>
+                                <p class="text-gray-600">Yüksek çözünürlüklü 3D sanal turlar ile evden çıkmadan evi gezin. Dinamik harita ve entegre randevu sistemi ile süreci hızlandırın.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ: Görsel / Mockup -->
+                <div class="mt-16 lg:mt-0 relative" data-aos="fade-left">
+                    <div class="bg-gray-100 rounded-3xl p-4 sm:p-8 relative">
+                        <!-- Dekoratif Arka Plan Çizgileri -->
+                        <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] rounded-3xl" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px;"></div>
+                        
+                        <!-- 3D Mockup Container -->
+                        <div class="relative bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 group">
+                            <!-- Top App Bar Mockup -->
+                            <div class="bg-gray-50 border-b border-gray-100 p-3 flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                                </div>
+                                <div class="text-xs font-medium text-gray-400">Sanal Tur - 3D Görüntüleme</div>
+                                <div><i class="fa-solid fa-expand text-gray-400 text-xs"></i></div>
+                            </div>
+                            <!-- 3D Image -->
+                            <div class="relative overflow-hidden cursor-pointer">
+                                <img src="assets/images/virtual_tour.jpg" alt="3D Sanal Ev Turu" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" style="aspect-ratio: 4/3;">
+                                <!-- Play Button Overlay -->
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition flex items-center justify-center">
+                                    <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm cursor-pointer hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-play text-brand-blue text-xl ml-1"></i>
+                                    </div>
+                                </div>
+                                <!-- Interactive UI Elements on Image -->
+                                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                                    <div class="bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-sm font-medium">
+                                        <i class="fa-solid fa-layer-group mr-1.5"></i> Kat Planı
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <div class="w-10 h-10 bg-black/60 backdrop-blur-md text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-black/80 transition">
+                                            <i class="fa-solid fa-cube"></i>
+                                        </div>
+                                        <div class="w-10 h-10 bg-black/60 backdrop-blur-md text-white rounded-full flex items-center justify-center cursor-pointer hover:bg-black/80 transition">
+                                            <i class="fa-solid fa-ruler-combined"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Görselleştirme Teknolojisi (3D, 2D, Fotoğraflar) -->
+    <section id="teknoloji" class="py-24 bg-brand-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <h2 class="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-3">Teknolojimiz</h2>
+                <h3 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Her Detaya Hakim Olun</h3>
+                <p class="text-gray-600 text-lg">Gayrimenkulü yerinden kalkmadan en ince ayrıntısına kadar incelemenizi sağlayan gelişmiş görüntüleme araçlarımızı ister ayrı ayrı, ister tek bir ekranda deneyimleyin.</p>
+            </div>
+
+            <!-- Ayrı Ayrı Gösterimler (Zig-Zag) -->
+            <div class="space-y-24 mb-32">
+                <!-- 2D Kat Planı -->
+                <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-brand-orange mb-6 shadow-sm">
+                            <i class="fa-solid fa-ruler-combined text-2xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-900 mb-4">2D Kat Planı</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed">Milimetrik ölçülendirilmiş teknik kat planı ile odaların büyüklüğünü ve duvar mesafelerini net bir şekilde görün. Mobilyalarınızın sığıp sığmayacağını önceden hesaplayın.</p>
+                    </div>
+                    <div class="mt-10 lg:mt-0 relative" data-aos="fade-left">
+                        <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
+                            <img src="assets/images/2d_floor_plan.jpg" alt="2D Kat Planı" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3D Kat Planı -->
+                <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1 mt-10 lg:mt-0 relative" data-aos="fade-right">
+                        <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
+                            <img src="assets/images/3d_floor_plan.jpg" alt="3D Kat Planı" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2" data-aos="fade-left">
+                        <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-brand-accent mb-6 shadow-sm">
+                            <i class="fa-solid fa-cube text-2xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-900 mb-4">3D Kuş Bakışı Görüntü</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed">Evin mimari yapısını ve derinliğini "Dollhouse" (Bebek Evi) görünümüyle keşfedin. Odaların birbirleriyle olan bağlantılarını çok daha net anlayın.</p>
+                    </div>
+                </div>
+
+                <!-- 3D İçeride Gezme (Walk) -->
+                <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-brand-blue mb-6 shadow-sm">
+                            <i class="fa-solid fa-person-walking-arrow-right text-2xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-900 mb-4">3D Sanal Tur (Walk)</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed">Yüksek çözünürlüklü gerçekçi sanal tur ile evin içinde özgürce dolaşın. Tüm odaları, manzarayı ve detayları sanki oradaymışsınız gibi inceleyin.</p>
+                    </div>
+                    <div class="mt-10 lg:mt-0 relative" data-aos="fade-left">
+                        <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
+                            <img src="assets/images/virtual_tour.jpg" alt="3D Sanal Tur" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
+                            <!-- Oynat butonu overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm cursor-pointer hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-play text-brand-blue text-xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hepsi Tek Yerde -->
+            <div class="relative bg-brand-dark rounded-[2.5rem] p-8 md:p-12 lg:p-16 overflow-hidden shadow-2xl text-center" data-aos="zoom-in">
+                <!-- Background effects -->
+                <div class="absolute top-0 right-0 w-[30rem] h-[30rem] bg-brand-blue rounded-full mix-blend-screen filter blur-[100px] opacity-40"></div>
+                <div class="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-brand-accent rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+                
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-white/10 text-white font-medium text-sm mb-6 border border-white/20 backdrop-blur-md">
+                        ✨ Hepsi Bir Arada
+                    </span>
+                    <h4 class="text-3xl md:text-5xl font-bold text-white mb-6">Tek Ekranda Kesintisiz Deneyim</h4>
+                    <p class="text-blue-100 text-lg md:text-xl mb-12 max-w-2xl mx-auto">Gelişmiş arayüzümüz sayesinde 3D tur, 2D plan ve fotoğraf galerisi arasında kaybolmadan tek bir tıklamayla geçiş yapın.</p>
+                    
+                    <div class="relative mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                        <img src="assets/images/unified_viewer.jpg" alt="Hepsi Tek Yerde Arayüzü" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <!-- Floating Navigation inside Viewer -->
+                        <div class="absolute bottom-6 mx-auto left-0 right-0 w-max bg-black/70 backdrop-blur-xl px-6 py-3 rounded-full flex gap-6 text-white text-sm font-medium border border-white/20">
+                            <span class="flex items-center text-brand-accent cursor-pointer"><i class="fa-solid fa-person-walking mr-2"></i> İçeride Gez</span>
+                            <span class="flex items-center hover:text-gray-300 cursor-pointer transition"><i class="fa-solid fa-cube mr-2"></i> 3D Plan</span>
+                            <span class="flex items-center hover:text-gray-300 cursor-pointer transition"><i class="fa-solid fa-ruler mr-2"></i> 2D Plan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Dinamik Harita ve Lokasyon -->
+    <section id="harita" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Sol Metin -->
+                <div data-aos="fade-right">
+                    <h2 class="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-3">Akıllı Keşif</h2>
+                    <h3 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Dinamik Harita ile <br/>Çevreyi Keşfedin</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        Evin sadece içini değil, dışını ve çevresini de bilmek hakkınız. Gelişmiş harita entegrasyonumuz sayesinde;
+                    </p>
+                    
+                    <ul class="space-y-5">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-location-dot text-brand-blue text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Tam ve Doğru Konum</h4>
+                                <p class="text-gray-600">Sürpriz yok, manipülasyon yok. İlanların gerçek harita konumları.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-map-location-dot text-brand-accent text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Çevresel Analiz</h4>
+                                <p class="text-gray-600">Okullar, hastaneler, toplu taşıma durakları ve marketlere olan mesafe analizleri.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-tags text-brand-orange text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Bölgesel Fiyat Karşılaştırması</h4>
+                                <p class="text-gray-600">Harita üzerinde çevredeki diğer doğrulanmış ilanların fiyatlarını karşılaştırın.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Sağ Harita Mockup -->
+                <div class="mt-16 lg:mt-0 relative" data-aos="fade-left">
+                    <div class="bg-gray-50 p-2 rounded-[2rem] shadow-2xl border border-gray-200 transform hover:-translate-y-2 transition-transform duration-500">
+                        <!-- Mac OS Style Header -->
+                        <div class="bg-white rounded-t-[1.75rem] border-b border-gray-100 p-4 flex items-center gap-2">
+                            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                            <div class="ml-4 bg-gray-100 text-gray-500 text-xs px-3 py-1.5 rounded-md flex-1 text-center font-medium">
+                                <i class="fa-solid fa-magnifying-glass mr-2"></i> Kadıköy, İstanbul
+                            </div>
+                        </div>
+                        <!-- Harita Görseli -->
+                        <div class="relative overflow-hidden rounded-b-[1.75rem]">
+                            <img src="assets/images/map_view.jpg" alt="Dinamik Harita" class="w-full h-auto object-cover" style="aspect-ratio: 4/3;">
+                            
+                            <!-- Interactive Map Elements (Mock) -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            
+                            <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                                <button class="bg-white text-brand-blue font-bold px-6 py-3 rounded-full shadow-lg hover:bg-gray-50 transition transform hover:scale-105">
+                                    <i class="fa-regular fa-map mr-2"></i> Haritada Büyük Aç
+                                </button>
+                                
+                                <div class="flex flex-col gap-2">
+                                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-gray-50 text-gray-700">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:bg-gray-50 text-gray-700">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yatırım ve Vizyon -->
+    <section id="vizyon" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div data-aos="zoom-in" class="bg-gradient-to-br from-brand-dark to-brand-blue rounded-3xl p-10 md:p-16 text-white shadow-2xl relative overflow-hidden">
+                <!-- Background Pattern -->
+                <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                
+                <div class="relative z-10">
+                    <span class="inline-block py-1 px-3 rounded-full bg-white/20 text-white font-medium text-sm mb-6 backdrop-blur-sm">
+                        Yatırımcılar İçin
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">İstanbul'dan Globale Ölçeklenebilir İş Modeli</h2>
+                    <p class="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto">
+                        Türkiye gayrimenkul pazarı 1.15 Trilyon TL'lik devasa bir hacme ulaştı. MülkVera, PropTech odaklı iş modeli, sıfır satıcı komisyonu ve dijitalleşme ile bu pazardan hızlı bir şekilde pay almayı hedefliyor.
+                    </p>
+                    
+                    <!-- Embedded PDF Presentation -->
+                    <div class="bg-white p-2 rounded-2xl shadow-xl mb-10 max-w-4xl mx-auto hidden md:block border border-white/20" style="height: 500px;">
+                        <object data="assets/docs/Architecting_Transparent_Property.pdf" type="application/pdf" width="100%" height="100%" class="rounded-xl">
+                            <p>PDF görüntülenemiyor. Lütfen aşağıdaki butondan indirin.</p>
+                        </object>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="assets/docs/Architecting_Transparent_Property.pdf" target="_blank" class="inline-flex items-center justify-center bg-white text-brand-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-lg transform hover:-translate-y-1">
+                            <i class="fa-solid fa-file-pdf mr-2"></i> Yatırımcı Sunumu
+                        </a>
+                        <a href="assets/docs/mulkvera_financial_model.xlsx" download class="inline-flex items-center justify-center bg-brand-accent text-white border border-brand-accent px-8 py-4 rounded-full font-bold text-lg hover:bg-green-600 transition shadow-lg transform hover:-translate-y-1">
+                            <i class="fa-solid fa-file-excel mr-2"></i> Finansal Model İndir
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Formu -->
+    <section id="iletisim" class="py-24 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 gap-16">
+                
+                <!-- İletişim Bilgileri -->
+                <div class="mb-12 lg:mb-0" data-aos="fade-right">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-accent/10 text-brand-accent font-semibold text-sm mb-4 border border-brand-accent/20">
+                        🚀 Tohum Öncesi Yatırım Turundayız!
+                    </span>
+                    <h2 class="text-brand-orange font-semibold tracking-wide uppercase text-sm mb-3">İletişim & Yatırımcı İlişkileri</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Geleceğin PropTech Vizyonuna Ortak Olun</h3>
+                    <p class="text-gray-600 text-lg mb-8">Emlak sektörünü şeffaflaştıran bu dönüşümde <strong class="text-brand-blue">vizyoner yatırımcılar arıyoruz</strong>. Detaylı finansal model ve değerleme üzerinden görüşmek için bizimle doğrudan iletişime geçin.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-blue border border-gray-100 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <h4 class="text-lg font-bold text-gray-900">Merkez Ofis</h4>
+                                <p class="text-gray-600 mt-1">Sancaktepe, İstanbul, Türkiye</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-blue border border-gray-100 shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <h4 class="text-lg font-bold text-gray-900">E-posta</h4>
+                                <a href="mailto:msalih.ozerz@gmail.com" class="text-gray-600 mt-1 hover:text-brand-blue transition">msalih.ozerz@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-brand-blue border border-gray-100 shrink-0">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <h4 class="text-lg font-bold text-gray-900">Web Sitesi</h4>
+                                <a href="https://www.mulkvera.com" target="_blank" class="text-gray-600 mt-1 hover:text-brand-blue transition">www.mulkvera.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form -->
+                <div data-aos="fade-left">
+                    <form id="contactForm" class="bg-white p-8 md:p-10 rounded-2xl shadow-soft border border-gray-100">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-6">Mesaj Gönderin</h4>
+                        <div class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Adınız Soyadınız</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition" placeholder="Ahmet Yılmaz" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresiniz</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition" placeholder="ahmet@example.com" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesajınız</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition resize-none" placeholder="Projeniz hakkında detaylı bilgi almak istiyorum..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brand-blue hover:bg-blue-800 text-white font-medium py-3.5 px-4 rounded-lg transition shadow-md hover:shadow-lg flex justify-center items-center">
+                                Gönder <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <script>
+                        document.getElementById('contactForm').addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const name = document.getElementById('name').value;
+                            const email = document.getElementById('email').value;
+                            const message = document.getElementById('message').value;
+                            
+                            const subject = encodeURIComponent('MülkVera İletişim Formu: ' + name);
+                            const body = encodeURIComponent('Gönderen: ' + name + '\nE-posta: ' + email + '\n\nMesaj:\n' + message);
+                            
+                            window.location.href = 'mailto:msalih.ozerz@gmail.com?subject=' + subject + '&body=' + body;
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="flex items-center mb-6 md:mb-0">
+                    <img src="assets/images/logo_white.png" alt="MülkVera Logo" class="h-14 w-auto opacity-90">
+                    <span class="text-3xl font-bold tracking-tight text-white ml-3">
+                        Mülk<span class="text-gray-400">Vera</span>
+                    </span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110">
+                        <span class="sr-only">Twitter</span>
+                        <i class="fa-brands fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110">
+                        <span class="sr-only">LinkedIn</span>
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110">
+                        <span class="sr-only">Instagram</span>
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 MülkVera. Tüm hakları saklıdır.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-300 transition">Gizlilik Politikası</a>
+                    <a href="#" class="hover:text-gray-300 transition">Kullanım Şartları</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS & Initialize -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS Animasyon Başlatma
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobil Menü Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar Scroll Efekti (Cam efekti koyulaştırma/şeffaflaştırma)
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.style.background = 'rgba(255, 255, 255, 0.85)';
+            }
+        });
+    </script>
+</body>
+</html>
+
