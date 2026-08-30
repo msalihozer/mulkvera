@@ -431,14 +431,34 @@
                     <p class="text-blue-100 text-lg md:text-xl mb-12 max-w-2xl mx-auto">Gelişmiş arayüzümüz sayesinde 3D tur, 2D plan ve fotoğraf galerisi arasında kaybolmadan tek bir tıklamayla geçiş yapın.</p>
                     
                     <div class="relative mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                        <img src="assets/images/unified_viewer.jpg" alt="Hepsi Tek Yerde Arayüzü" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <img id="unified-viewer-img" src="assets/images/unified_viewer.jpg" alt="Hepsi Tek Yerde Arayüzü" class="w-full h-auto object-cover transition-opacity duration-300">
                         <!-- Floating Navigation inside Viewer -->
-                        <div class="absolute bottom-6 mx-auto left-0 right-0 w-max bg-black/70 backdrop-blur-xl px-6 py-3 rounded-full flex gap-6 text-white text-sm font-medium border border-white/20">
-                            <span class="flex items-center text-brand-accent cursor-pointer"><i class="fa-solid fa-person-walking mr-2"></i> İçeride Gez</span>
-                            <span class="flex items-center hover:text-gray-300 cursor-pointer transition"><i class="fa-solid fa-cube mr-2"></i> 3D Plan</span>
-                            <span class="flex items-center hover:text-gray-300 cursor-pointer transition"><i class="fa-solid fa-ruler mr-2"></i> 2D Plan</span>
+                        <div class="absolute bottom-6 mx-auto left-0 right-0 w-max bg-black/70 backdrop-blur-xl px-6 py-3 rounded-full flex gap-6 text-white text-sm font-medium border border-white/20 z-20">
+                            <span onclick="changeViewer('unified_viewer.jpg', this)" class="viewer-btn flex items-center text-brand-accent cursor-pointer transition"><i class="fa-solid fa-person-walking mr-2"></i> İçeride Gez</span>
+                            <span onclick="changeViewer('3d_plan.jpg', this)" class="viewer-btn flex items-center hover:text-gray-300 cursor-pointer transition"><i class="fa-solid fa-cube mr-2"></i> 3D Plan</span>
+                            <span onclick="changeViewer('2d_plan.jpg', this)" class="viewer-btn flex items-center hover:text-gray-300 cursor-pointer transition"><i class="fa-solid fa-ruler mr-2"></i> 2D Plan</span>
                         </div>
                     </div>
+                    
+                    <script>
+                        function changeViewer(imageName, el) {
+                            const img = document.getElementById('unified-viewer-img');
+                            img.style.opacity = '0.7';
+                            setTimeout(() => {
+                                img.src = 'assets/images/' + imageName;
+                                img.style.opacity = '1';
+                            }, 150);
+                            
+                            const btns = document.querySelectorAll('.viewer-btn');
+                            btns.forEach(btn => {
+                                btn.classList.remove('text-brand-accent');
+                                btn.classList.add('hover:text-gray-300');
+                            });
+                            
+                            el.classList.remove('hover:text-gray-300');
+                            el.classList.add('text-brand-accent');
+                        }
+                    </script>
                 </div>
             </div>
 
