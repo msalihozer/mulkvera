@@ -285,16 +285,16 @@
                                     <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
                                     <div class="w-3 h-3 bg-green-400 rounded-full"></div>
                                 </div>
-                                <div class="text-xs font-medium text-gray-400">Sanal Tur - 3D Görüntüleme</div>
+                                <div class="text-xs font-medium text-gray-400">Matterport Pro 3 - 3D Sanal Tur</div>
                                 <div><i class="fa-solid fa-expand text-gray-400 text-xs"></i></div>
                             </div>
                             <!-- 3D Image -->
                             <div class="relative overflow-hidden cursor-pointer">
-                                <img src="assets/images/virtual_tour.jpg" alt="3D Sanal Ev Turu" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" style="aspect-ratio: 4/3;">
-                                <!-- Play Button Overlay -->
-                                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition flex items-center justify-center">
-                                    <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm cursor-pointer hover:scale-110 transition-transform">
-                                        <i class="fa-solid fa-play text-brand-blue text-xl ml-1"></i>
+                                <img src="assets/images/matterport_tour.jpg" alt="Matterport Pro 3 3D Sanal Ev Turu" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" style="aspect-ratio: 4/3;">
+                                <!-- Hover Overlay (No fake play button) -->
+                                <div class="absolute inset-0 bg-transparent group-hover:bg-black/10 transition flex items-center justify-center">
+                                    <div class="opacity-0 group-hover:opacity-100 bg-white/90 px-4 py-2 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 font-medium text-brand-blue text-sm flex items-center">
+                                        <i class="fa-solid fa-street-view mr-2"></i> İçeriyi Keşfet
                                     </div>
                                 </div>
                                 <!-- Interactive UI Elements on Image -->
@@ -330,6 +330,38 @@
 
             <!-- Ayrı Ayrı Gösterimler (Zig-Zag) -->
             <div class="space-y-24 mb-32">
+                <!-- Dış Çekim -->
+                <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-brand-blue mb-6 shadow-sm">
+                            <i class="fa-solid fa-building text-2xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-900 mb-4">Profesyonel Dış Çekim</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed">Binanın mimarisini, çevresel peyzajını ve dış görünümünü en iyi yansıtan yüksek kaliteli profesyonel dış çekim fotoğrafları ile ilk izlenimi güçlendirin.</p>
+                    </div>
+                    <div class="mt-10 lg:mt-0 relative" data-aos="fade-left">
+                        <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
+                            <img src="assets/images/exterior.jpg" alt="Dış Çekim" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sokak Görünümü -->
+                <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1 mt-10 lg:mt-0 relative" data-aos="fade-right">
+                        <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
+                            <img src="assets/images/street_view.jpg" alt="Sokak Görünümü" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2" data-aos="fade-left">
+                        <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-brand-accent mb-6 shadow-sm">
+                            <i class="fa-solid fa-street-view text-2xl"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold text-gray-900 mb-4">Sokak Görünümü</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed">Evinizin bulunduğu sokağın atmosferini, komşuluğu ve çevredeki genel yaşam tarzını yansıtan geniş açılı sokak görünümleri ile alıcılara güven verin.</p>
+                    </div>
+                </div>
+
                 <!-- 2D Kat Planı -->
                 <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
                     <div data-aos="fade-right">
@@ -341,7 +373,7 @@
                     </div>
                     <div class="mt-10 lg:mt-0 relative" data-aos="fade-left">
                         <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
-                            <img src="assets/images/2d_floor_plan.jpg" alt="2D Kat Planı" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
+                            <img src="assets/images/2d_plan.jpg" alt="2D Kat Planı" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
                         </div>
                     </div>
                 </div>
@@ -350,11 +382,11 @@
                 <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
                     <div class="order-2 lg:order-1 mt-10 lg:mt-0 relative" data-aos="fade-right">
                         <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
-                            <img src="assets/images/3d_floor_plan.jpg" alt="3D Kat Planı" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
+                            <img src="assets/images/3d_plan.jpg" alt="3D Kat Planı" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
                         </div>
                     </div>
                     <div class="order-1 lg:order-2" data-aos="fade-left">
-                        <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-brand-accent mb-6 shadow-sm">
+                        <div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-500 mb-6 shadow-sm">
                             <i class="fa-solid fa-cube text-2xl"></i>
                         </div>
                         <h4 class="text-3xl font-bold text-gray-900 mb-4">3D Kuş Bakışı Görüntü</h4>
@@ -362,22 +394,22 @@
                     </div>
                 </div>
 
-                <!-- 3D İçeride Gezme (Walk) -->
+                <!-- 3D İçeride Gezme (Matterport) -->
                 <div class="lg:grid lg:grid-cols-2 gap-12 items-center">
                     <div data-aos="fade-right">
-                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-brand-blue mb-6 shadow-sm">
-                            <i class="fa-solid fa-person-walking-arrow-right text-2xl"></i>
+                        <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-6 shadow-sm">
+                            <i class="fa-solid fa-vr-cardboard text-2xl"></i>
                         </div>
-                        <h4 class="text-3xl font-bold text-gray-900 mb-4">3D Sanal Tur (Walk)</h4>
-                        <p class="text-gray-600 text-lg leading-relaxed">Yüksek çözünürlüklü gerçekçi sanal tur ile evin içinde özgürce dolaşın. Tüm odaları, manzarayı ve detayları sanki oradaymışsınız gibi inceleyin.</p>
+                        <h4 class="text-3xl font-bold text-gray-900 mb-4">Matterport Pro 3 <br/>Kat İçinde Gezme</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed">Yüksek çözünürlüklü 3D sanal tur ile evin içinde özgürce dolaşın. Tüm odaları ve detayları sanki oradaymışsınız gibi interaktif bir şekilde inceleyin.</p>
                     </div>
                     <div class="mt-10 lg:mt-0 relative" data-aos="fade-left">
-                        <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500">
-                            <img src="assets/images/virtual_tour.jpg" alt="3D Sanal Tur" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
-                            <!-- Oynat butonu overlay -->
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm cursor-pointer hover:scale-110 transition-transform">
-                                    <i class="fa-solid fa-play text-brand-blue text-xl ml-1"></i>
+                        <div class="bg-white p-2 rounded-3xl shadow-xl shadow-gray-200 border border-gray-100 transform hover:scale-[1.02] transition-transform duration-500 group">
+                            <img src="assets/images/matterport_tour.jpg" alt="Matterport Pro 3 Sanal Tur" class="w-full h-auto rounded-2xl object-cover" style="aspect-ratio: 16/9;">
+                            <!-- Etkileşimli Hover Overlay (Play butonu yerine daha profesyonel bir görünüm) -->
+                            <div class="absolute inset-0 bg-transparent group-hover:bg-black/10 transition flex items-center justify-center cursor-pointer">
+                                <div class="opacity-0 group-hover:opacity-100 bg-white/95 px-6 py-3 rounded-full shadow-2xl backdrop-blur-md transition-all duration-300 font-bold text-brand-blue text-sm flex items-center transform scale-95 group-hover:scale-100">
+                                    <i class="fa-solid fa-arrows-to-eye mr-2 text-lg"></i> 3D Turu Başlat
                                 </div>
                             </div>
                         </div>
